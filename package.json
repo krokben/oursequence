@@ -2,8 +2,48 @@
   "name": "oursequence",
   "version": "1.0.0",
   "description": "Our Sequence, collaborative drum sequencer",
-  "main": "index.js",
   "repository": "https://github.com/krokben/oursequence.git",
   "author": "Tommy Svensson",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpileOnly ./server/server.ts",
+    "start": "tsc && node ./dist/server.js",
+    "test": "jest",
+    "lint": "eslint server/*"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10",
+    "morgan": "^1.10.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.0",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/jest": "^25.2.1",
+    "@types/morgan": "^1.9.0",
+    "@types/node": "^13.13.2",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "html-webpack-plugin": "^4.2.0",
+    "jest": "^25.4.0",
+    "prettier": "^2.0.5",
+    "source-map-loader": "^0.2.4",
+    "ts-jest": "^25.4.0",
+    "ts-loader": "^7.0.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.10.3"
+  }
 }
