@@ -1,0 +1,9 @@
+{
+  "name": "oursequence",
+  "version": "1.0.0",
+  "description": "Our Sequence, collaborative drum sequencer",
+  "main": "index.js",
+  "repository": "https://github.com/krokben/oursequence.git",
+  "author": "Tommy Svensson",
+  "license": "MIT"
+}
