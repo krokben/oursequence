@@ -1,24 +1,26 @@
 import * as React from "react";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { Steps } from "./components/Steps";
+import { AppState } from "./store";
+import Steps from "./components/Steps";
+
+import { chooseStep } from "./store/steps/actions";
 
 const Main = styled.main`
   padding: 16px;
 `;
 
-const steps = [
-  { id: 1, drum: "kick" },
-  { id: 2, drum: "snare" },
-];
-
-export default function App() {
-  const [chosenStepIndex, setChosenStepIndex] = useState(0);
+export default () => {
+  const steps = useSelector((state: AppState) => state.steps);
 
   return (
     <Main>
-      <Steps steps={steps} setChosenStepIndex={setChosenStepIndex} />
-      {`Chosen step: ${chosenStepIndex}`}
+      <Steps />
+      {`Chosen step: ${
+        steps.some((step) => step.chosen)
+          ? steps.find((step) => step.chosen).id
+          : "none chosen"
+      }`}
     </Main>
   );
-}
+};
