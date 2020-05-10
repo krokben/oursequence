@@ -9,11 +9,10 @@ import { createContainerWithStore } from "../testHelpers/domManipulators";
 import Steps from "../src/components/Steps";
 
 describe("Steps", () => {
-  let renderWithStore, store, container, dispatchSpy;
+  let renderWithStore, store, container;
 
   beforeEach(() => {
     ({ renderWithStore, store, container } = createContainerWithStore());
-    dispatchSpy = jest.fn();
   });
 
   it("renders multiple steps in an ul element", () => {
