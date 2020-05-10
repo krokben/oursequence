@@ -4,14 +4,16 @@
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import * as ReactTestUtils from "react-dom/test-utils";
 import { createContainerWithStore } from "../testHelpers/domManipulators";
 import Steps from "../src/components/Steps";
 
-describe("Appointment", () => {
-  let renderWithStore, container;
+describe("Steps", () => {
+  let renderWithStore, store, container, dispatchSpy;
 
   beforeEach(() => {
-    ({ renderWithStore, container } = createContainerWithStore());
+    ({ renderWithStore, store, container } = createContainerWithStore());
+    dispatchSpy = jest.fn();
   });
 
   it("renders multiple steps in an ul element", () => {
